@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind Custom CSS */
+
+/* Card container */
+.card-container {
+    perspective: 1000px; /* Ensure 3D space for flip animation */
+}
+
+/* Card itself */
+.card-face {
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute; /* Stack front and back faces on top of each other */
+    top: 0;
+    left: 0;
+}
+
+/* Front face styling */
+.card-front {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Back face styling */
+.card-back {
+    background-color: yellow;
+    color: black;
+    transform: rotateY(180deg); /* This ensures the back starts hidden and flips when hovered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Flip on hover */
+.card-container:hover .card-face {
+    transform: rotateY(180deg);
+}
+
+.card-container:hover .card-back {
+    transform: rotateY(360deg); /* Ensure back flips into view */
+}
