@@ -1,6 +1,6 @@
 import React from "react";
 import ProfileImage from "../assets/user profile 1.jpg"; // placeholder for black-and-white photo
-import Profile2 from "../assets/userprofile2.svg"
+import Profile2 from "../assets/userprofile2.svg";
 
 function About() {
   return (
@@ -29,7 +29,9 @@ function About() {
             </div>
 
             {/* Article snippet on the left */}
-            <h3 className="text-lg font-bold uppercase">Alias: <s className="bg-yellow-300 inline-block p-1">Oranyelu</s> </h3>
+            <h3 className="text-lg font-bold uppercase">
+              Alias: <s className="bg-yellow-300 inline-block p-1">Oranyelu</s>{" "}
+            </h3>
             <p className="text-sm leading-relaxed mb-4">
               Navigating the digital cosmos, I'm a Full Stack Web Developer by
               day, Graphic Designer by afternoon, and 3D Animator by night - a
@@ -43,11 +45,11 @@ function About() {
             <h3 className="text-lg font-bold uppercase">Education</h3>
             <p className="text-sm leading-relaxed mb-4">
               I have pursued a dynamic educational path that combines Medical
-              Radiography and Web Development, allowing me to develop
-              expertise in both fields:
+              Radiography and Web Development, allowing me to develop expertise
+              in both fields:
             </p>
 
-            <ul className="list-disc pl-5 text-sm leading-relaxed mb-4">
+            <ul className="list-disc pl-5 text-sm leading-relaxed mb-4 transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-xl hover:shadow-xl rounded-xl">
               <li>
                 <strong>Bachelor's Degree in Medical Radiography</strong>
                 <br />
@@ -100,7 +102,7 @@ function About() {
               contributed to numerous projects, from dynamic websites to
               intricate web applications.{" "}
             </p>{" "}
-            <p className="text-sm leading-relaxed mb-4">
+            <p className="text-sm leading-relaxed mb-4 ">
               {" "}
               Furthermore, I hold leadership roles as the{" "}
               <i> Lead Developer at George Wood Casket and Furniture </i>, where
@@ -112,8 +114,7 @@ function About() {
               marketing approaches, handling <i>email automation</i> for
               customer order confirmations and building customer engagement
               through digital platforms.{" "}
-            </p>{" "}
-           
+            </p>
           </div>
 
           {/* Right Section */}
@@ -123,7 +124,7 @@ function About() {
               As a versatile Fullstack Web Developer, I am proficient in both
               frontend and backend technologies. My expertise includes:
             </p>
-            <ul className="list-disc pl-5 text-sm leading-relaxed mb-4">
+            <ul className="list-disc pl-5 text-sm leading-relaxed mb-4 transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-xl hover:shadow-xl rounded-xl">
               <li>
                 <strong>Frontend Development:</strong> React, Tailwind CSS,
                 HTML5, CSS3, JavaScript (ES6+), Responsive Design, and Web
@@ -144,24 +145,39 @@ function About() {
               </li>
               <li>
                 <strong>Email Automation:</strong> Setting up email services
-                like NodeMailer for automatic order confirmation and
-                customer communication.
+                like NodeMailer for automatic order confirmation and customer
+                communication.
               </li>
               <li>
                 <strong>DevOps & Hosting:</strong> Experience with Vite,
                 deployment on Netlify, and continuous integration.
               </li>
             </ul>
-
-            <h3 className="text-3xl font-bold uppercase mb-2">
-              PROJECTS
-            </h3>{" "}
+            <h3 className="text-3xl font-bold uppercase mb-2">PROJECTS</h3>{" "}
             <ul className="list-disc pl-5 text-sm leading-relaxed mb-4">
-            <li> <a href="https://www.figma.com/design/CI1JGoJUv5FwLbmctC7vje/GEORGE-WOOD?node-id=0-1&t=bj0U7oyKU4rbAxoz-1">George Wood Figma Dashboard</a> </li>
-            <li> <a href="https://georgewoodcasket.com" target="_blank" rel="noopener noreferrer">George Wood Casket and Furniture website</a> </li>
-            <li> <a href="http://" target="_blank" rel="noopener noreferrer">Learnable Kids [Collaboration] </a></li>
+              <li>
+                {" "}
+                <a href="https://www.figma.com/design/CI1JGoJUv5FwLbmctC7vje/GEORGE-WOOD?node-id=0-1&t=bj0U7oyKU4rbAxoz-1">
+                  George Wood Figma Dashboard
+                </a>{" "}
+              </li>
+              <li>
+                {" "}
+                <a
+                  href="https://georgewoodcasket.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  George Wood Casket and Furniture website
+                </a>{" "}
+              </li>
+              <li>
+                {" "}
+                <a href="http://" target="_blank" rel="noopener noreferrer">
+                  Learnable Kids [Collaboration]{" "}
+                </a>
+              </li>
             </ul>
-
             <div className="w-full h-auto mb-4 overflow-hidden">
               <img
                 src={Profile2}
