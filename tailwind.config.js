@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        news: ['"Newsreader"', 'serif'],
+        spectral: ['"Spectral"', 'serif'],
+        old: ['"Old Standard TT"', 'serif'],
+      },
+    },
   },
   plugins: [],
 }

@@ -1,204 +1,183 @@
-import React from "react";
-import ProfileImage from "../assets/user profile 1.jpg"; // placeholder for black-and-white photo
+// About.js
+
+import ProfileImage from "../assets/WhatsApp Image 2025-06-18 at 00.15.25_190ababd.jpg";
 import Profile2 from "../assets/userprofile2.svg";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-function About() {
+function About({ projects = [] }) {
+  const [sepia, setSepia] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle("sepia-mode", sepia);
+  }, [sepia]);
+
   return (
-    <div className="min-h-screen bg-[#f3e2b3] py-12 px-4 flex justify-center">
-      <div className="bg-white max-w-5xl w-full p-6 border border-black shadow-xl">
-        {/* Title */}
-        <h1 className="text-4xl font-bold text-center uppercase border-b-4 border-black mb-6">
-          NOTORIOUS DEVELOPER
+    <div
+      className={`min-h-screen bg-[#f3e2b3] py-12 px-4 flex justify-center font-news transition-all duration-700 ease-in-out ${
+        sepia ? "sepia" : ""
+      }`}
+    >
+      <div className="bg-[#fffdf5] max-w-5xl w-full p-6 border-[1.5px] border-black shadow-lg print:text-black print:bg-white paper-texture animate-fade-in">
+        {/* Header */}
+        <h1 className="text-4xl font-extrabold text-center uppercase border-b-4 border-black mb-2 tracking-widest">
+          THE DIGITAL HERALD
         </h1>
+        <p className="text-center italic text-xs mb-4">
+          Published: June 17, 2025 · Enugu, Nigeria
+        </p>
 
-        {/* Subheader */}
-        <h2 className="text-center text-2xl font-semibold uppercase mb-2">
-          Developer Plans World Biggest Internet Heist
+        <h2 className="text-center text-lg italic uppercase mb-6 tracking-wide">
+          Exclusive: Fullstack Dev & Radiographer Plots UX Revolution
         </h2>
 
-        <div className="grid grid-cols-3 gap-4">
-          {/* Left Section */}
+        <div className="grid grid-cols-3 gap-6">
+          {/* LEFT COLUMN */}
           <div className="col-span-1">
-            {/* Placeholder for black and white image */}
-            <div className="w-full h-auto mb-4 overflow-hidden">
+            <h3 className="text-md font-bold uppercase">
+              Codename: <s className="bg-yellow-300 p-1">Oranyelu</s>
+            </h3>
+            <p className="text-xs leading-relaxed mb-4">
+              Fullstack Web Developer. Branding Overlord. Radiographer. I write
+              code like poetry and build brands like cathedrals — sturdy,
+              sacred, and built to inspire awe. My work is an intersection of
+              tech and tenderness, where precision meets flair, and legacy meets
+              innovation.
+            </p>
+
+            <h3 className="text-md font-bold uppercase">Education</h3>
+            <ul className="list-disc pl-5 text-xs mb-4">
+              <li>
+                <strong>BSc in Medical Radiography</strong>
+                <br />
+                University of Nigeria, Enugu Campus – Completed
+              </li>
+              <li>
+                <strong>Frontend Web Development</strong>
+                <br />
+                Genesys Upskill & Learnable Program – React, UI/UX, JavaScript
+              </li>
+              <li>
+                <strong>Backend Development</strong>
+                <br />
+                Atuenyi Coding Academy – Node.js, Express, MongoDB, SQL
+              </li>
+              <li>
+                <strong>Tech Mentorship</strong>
+                <br />
+                Instructor, Techxagon Academy – Guided new devs in React/Node
+              </li>
+            </ul>
+          </div>
+
+          {/* CENTER COLUMN */}
+          <div className="col-span-1">
+            {/* Moved ProfileImage here */}
+            <div className="overflow-hidden mb-4 parchment">
               <img
                 src={ProfileImage}
                 alt="George Chiemerie Chime"
-                className="w-full h-auto grayscale transform transition-transform duration-500 hover:scale-110"
+                className="w-full grayscale hover:scale-105 transform transition-transform duration-300"
               />
             </div>
 
-            {/* Article snippet on the left */}
-            <h3 className="text-lg font-bold uppercase">
-              Alias: <s className="bg-yellow-300 inline-block p-1">Oranyelu</s>{" "}
+            <h3 className="text-xl font-black uppercase mb-2 border-b border-black">
+              Work & Contributions
             </h3>
-            <p className="text-sm leading-relaxed mb-4">
-              Navigating the digital cosmos, I'm a Full Stack Web Developer by
-              day, Graphic Designer by afternoon, and 3D Animator by night - a
-              triple threat in the tech world. My code is as clean as my
-              sketches, and my animations are as lively as my sense of humor. I
-              believe in making users smile, one pixel at a time, and I'm on a
-              mission to turn every browsing experience into an unexpected
-              adventure.
+            <p className="text-xs mb-4 leading-relaxed">
+              As Executive Director and Lead Developer at{" "}
+              <strong>George Wood Casket</strong>, I fuse tradition with tech —
+              building e-commerce platforms, automating customer emails,
+              digitizing funeral experiences, and rebranding one of Nigeria’s
+              oldest casket companies.
             </p>
-
-            <h3 className="text-lg font-bold uppercase">Education</h3>
-            <p className="text-sm leading-relaxed mb-4">
-              I have pursued a dynamic educational path that combines Medical
-              Radiography and Web Development, allowing me to develop expertise
-              in both fields:
+            <p className="text-xs mb-4 leading-relaxed">
+              Founder of <strong>PawVibe</strong> — a digital pet store for
+              Nigeria, and creator of <strong>Maison Jorgie</strong>, a luxury
+              fashion e-commerce app made with React Native.
             </p>
-
-            <ul className="list-disc pl-5 text-sm leading-relaxed mb-4 transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-xl hover:shadow-xl rounded-xl">
-              <li>
-                <strong>Bachelor's Degree in Medical Radiography</strong>
-                <br />
-                University of Nigeria, Nsukka (In Progress)
-                <br />
-                Currently, I am advancing my knowledge and practical skills in
-                diagnostic imaging, focusing on MRI, CT scans, and X-rays, with
-                a special interest in patient safety and medical technology
-                integration.
-              </li>
-
-              <li>
-                <strong>Frontend Web Development Certification</strong>
-                <br />
-                Genesys Tech-Hub (Completed)
-                <br />
-                Successfully completed the Genesys Upskill and Learnable
-                programs, gaining deep insights into React, JavaScript, and
-                UI/UX design.
-              </li>
-
-              <li>
-                <strong>Backend Web Development Training</strong>
-                <br />
-                Atuenyi Coding Academy (Completed)
-                <br />
-                Developed backend skills with Node.js and Express.js, including
-                building robust RESTful APIs and database management with
-                MongoDB and SQL.
-              </li>
-            </ul>
-          </div>
-
-          {/* Middle Section - Main Article */}
-          <div className="col-span-1">
-            {" "}
-            <h3 className="text-3xl font-bold uppercase mb-2">
-              Experience
-            </h3>{" "}
-            <p className="text-sm leading-relaxed mb-4">
-              {" "}
-              As a <b>Fullstack Web Developer</b> and Medical Radiographer, I
-              have developed a strong foundation in both technical and
-              healthcare fields. My journey began with my passion for creating
-              seamless user interfaces and solving backend challenges, leading
-              me to specialize in Frontend Development with frameworks like
-              <b> React</b> and <b>Tailwind CSS</b>, and Backend Development
-              using
-              <i> Node.js</i> and <i>Express</i>. Over the years, I’ve built and
-              contributed to numerous projects, from dynamic websites to
-              intricate web applications.{" "}
-            </p>{" "}
-            <p className="text-sm leading-relaxed mb-4 ">
-              {" "}
-              Furthermore, I hold leadership roles as the{" "}
-              <i> Lead Developer at George Wood Casket and Furniture </i>, where
-              I oversee website operations and marketing strategy. My
-              entrepreneurial efforts have allowed me to blend my technical and
-              business skills, managing website development, customer relations,
-              and innovative service offerings for funeral planning, such as
-              casket design and memorial services. I also embrace modern
-              marketing approaches, handling <i>email automation</i> for
-              customer order confirmations and building customer engagement
-              through digital platforms.{" "}
+            <p className="text-xs mb-4 leading-relaxed">
+              My stack? React, Tailwind, Express, MongoDB, Git, NodeMailer,
+              Netlify, Vite — but also brand systems, Figma wireframes, and
+              content calendars that actually slap.
+            </p>
+            <p className="text-xs leading-relaxed italic text-gray-700">
+              “Innovation is the funeral I give to the old ways. And I always
+              show up in black.”
             </p>
           </div>
 
-          {/* Right Section */}
+          {/* RIGHT COLUMN */}
           <div className="col-span-1">
-            <h3 className="text-lg font-bold uppercase">Skills</h3>
-            <p className="text-sm leading-relaxed mb-4">
-              As a versatile Fullstack Web Developer, I am proficient in both
-              frontend and backend technologies. My expertise includes:
-            </p>
-            <ul className="list-disc pl-5 text-sm leading-relaxed mb-4 transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-xl hover:shadow-xl rounded-xl">
-              <li>
-                <strong>Frontend Development:</strong> React, Tailwind CSS,
-                HTML5, CSS3, JavaScript (ES6+), Responsive Design, and Web
-                Accessibility.
-              </li>
-              <li>
-                <strong>Backend Development:</strong> Node.js, Express.js,
-                RESTful APIs, and working with databases like MongoDB and SQL.
-              </li>
-              <li>
-                <strong>Version Control & Collaboration:</strong> Git, GitHub,
-                and Agile methodologies for project management.
-              </li>
-              <li>
-                <strong>UI/UX Design:</strong> Expertise in creating visually
-                appealing and user-friendly interfaces, with experience in Figma
-                and Adobe XD.
-              </li>
-              <li>
-                <strong>Email Automation:</strong> Setting up email services
-                like NodeMailer for automatic order confirmation and customer
-                communication.
-              </li>
-              <li>
-                <strong>DevOps & Hosting:</strong> Experience with Vite,
-                deployment on Netlify, and continuous integration.
-              </li>
+            <h3 className="text-md font-bold uppercase mb-2">Tech Stack</h3>
+            <ul className="list-disc text-xs pl-5 mb-4">
+              <li>React, React Native, Tailwind, JavaScript (ES6+)</li>
+              <li>Node.js, Express.js, MongoDB, SQL</li>
+              <li>Git, GitHub, Agile, CI/CD, Netlify, Vite</li>
+              <li>UI/UX Design (Figma, Adobe XD)</li>
+              <li>Email Automation (NodeMailer, marketing flows)</li>
+              <li>API Dev, Auth, RESTful architecture</li>
             </ul>
-            <h3 className="text-3xl font-bold uppercase mb-2">PROJECTS</h3>{" "}
-            <ul className="list-disc pl-5 text-sm leading-relaxed mb-4">
-              <li>
-                {" "}
-                <a href="https://www.figma.com/design/CI1JGoJUv5FwLbmctC7vje/GEORGE-WOOD?node-id=0-1&t=bj0U7oyKU4rbAxoz-1">
-                  George Wood Figma Dashboard
-                </a>{" "}
-              </li>
-              <li>
-                {" "}
-                <a
-                  href="https://georgewoodcasket.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  George Wood Casket and Furniture website
-                </a>{" "}
-              </li>
-              <li>
-                {" "}
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                  Learnable Kids [Collaboration]{" "}
-                </a>
-              </li>
+
+            <h3 className="text-md font-bold uppercase mb-2">Projects</h3>
+            <ul className="list-disc text-xs pl-5 mb-4">
+              {projects.map((proj, idx) => (
+                <li key={idx}>
+                  <a
+                    href={proj.link}
+                    className="underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {proj.title}
+                  </a>
+                </li>
+              ))}
             </ul>
-            <div className="w-full h-auto mb-4 overflow-hidden">
+
+            {/* View All Projects button */}
+            <Link
+              to="/projects"
+              className="inline-block text-xs font-semibold text-black underline hover:decoration-wavy hover:underline-offset-2 mb-6"
+            >
+              View All Projects →
+            </Link>
+
+            <div className="overflow-hidden mb-4">
               <img
                 src={Profile2}
-                alt="George Chiemerie Chime"
-                className="w-full h-auto grayscale transform transition-transform duration-500 hover:scale-110"
+                alt="George Secondary"
+                className="w-full grayscale hover:scale-105 transform transition-transform duration-300"
               />
             </div>
+
             <a
-              href="mailto:george@example.com"
-              className="inline-block px-4 py-1 bg-yellow-500 text-black text-xs font-semibold rounded-lg mt-4 hover:bg-yellow-400"
+              href="mailto:georgechime91@icloud.com"
+              className="inline-block px-4 py-1 bg-black text-white text-xs font-semibold rounded hover:bg-gray-800"
             >
-              Get in Touch
+              Send News Tip
             </a>
+            <button
+              onClick={() => window.print()}
+              className="block mx-auto my-4 px-4 py-2 bg-black text-white text-xs rounded hover:bg-gray-700 print:hidden"
+            >
+              🖨️ Print Article
+            </button>
+            <button
+              onClick={() => setSepia(!sepia)}
+              className="block mx-auto mb-4 px-4 py-2 border border-black text-black text-xs rounded hover:bg-yellow-100 print:hidden"
+            >
+              {sepia ? "🌙 Go Light" : "🧾 Go Sepia"}
+            </button>
           </div>
         </div>
 
-        {/* Footer section */}
-        <div className="mt-6 pt-4 border-t-2 border-black">
-          <p className="text-center text-sm">
-            Published by George Chiemerie Chime - Fullstack Web Developer and
-            Medical Radiographer
+        {/* FOOTER */}
+        <div className="mt-6 pt-4 border-t border-black text-center text-[10px] tracking-wide">
+          <p>
+            Published by George Chiemerie Chime · Fullstack Developer · Medical
+            Radiographer · Founder, GWCF Foundation · Copyright ©{" "}
+            {new Date().getFullYear()}
           </p>
         </div>
       </div>
